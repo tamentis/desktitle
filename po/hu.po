@@ -1,0 +1,65 @@
+# translation of hu.po to hungarian
+# Copyright (C) YEAR Enlightenment development team
+# This file is distributed under the same license as the PACKAGE package.
+#
+# Lisovszki  <lisovszki@gmail.com>, 2008.
+msgid ""
+msgstr ""
+"Project-Id-Version: hu\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2010-11-10 22:36-0500\n"
+"PO-Revision-Date: 2008-02-02 23:40+0100\n"
+"Last-Translator: Lisovszki  <lisovszki@gmail.com>\n"
+"Language-Team: hungarian <hu@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Generator: KBabel 1.11.4\n"
+"Plural-Forms:  nplurals=2; plural=(n != 1);\n"
+
+#: src/e_mod_config.c:52 src/e_mod_config.c:105
+msgid "Uptime Settings"
+msgstr "Futási idő Beállítások"
+
+#: src/e_mod_config.c:107
+msgid "Update Interval:"
+msgstr "Frissítés Időköz:"
+
+#: src/e_mod_config.c:110 src/e_mod_config.c:117
+#, c-format
+msgid "%1.0f seconds"
+msgstr "%1.0f másodperc"
+
+#: src/e_mod_config.c:114
+msgid "Check Interval:"
+msgstr "Ellenőrzés Időköz:"
+
+#: src/e_mod_main.c:160
+msgid "Uptime"
+msgstr "Futási idő"
+
+#: src/e_mod_main.c:210
+#, fuzzy
+msgid "Settings"
+msgstr "Futási idő Beállítások"
+
+#: src/e_mod_main.c:552
+#, c-format
+msgid "up: %d days, %d:%02d:%02ld"
+msgstr "üzemben: %d napja, %d:%02d:%02ld"
+
+#: src/e_mod_main.c:559
+#, c-format
+msgid "la: %.2f %.2f %.2f"
+msgstr "la: %.2f %.2f %.2f"
+
+#: src/e_mod_main.c:564
+#, c-format
+msgid "users: %d"
+msgstr "felhasználók: %d"
+
+#~ msgid "Uptime Configuration"
+#~ msgstr "Futási idő beállítás"
+
+#~ msgid "Configuration"
+#~ msgstr "Beállítás"

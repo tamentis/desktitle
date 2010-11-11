@@ -1,0 +1,67 @@
+# translation of eo.po to Esperanto
+# Esperanto translation of uptime
+# Copyright (C) 2008 Enlightenment development team
+# This file is distributed under the same license as the uptime package.
+#
+# Olivier M. <olivierweb@ifrance.com>, 2008.
+# Olivier <eliovir@nospam.gmail.com>, 2009.
+msgid ""
+msgstr ""
+"Project-Id-Version: eo\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2010-11-10 22:36-0500\n"
+"PO-Revision-Date: 2010-01-20 21:35+0000\n"
+"Last-Translator: Michael Moroni <haikara90@gmail.com>\n"
+"Language-Team: Esperanto <translation-team-eo@lists.sourceforge.net>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"X-Launchpad-Export-Date: 2010-01-21 04:34+0000\n"
+"X-Generator: Launchpad (build Unknown)\n"
+
+#: src/e_mod_config.c:52 src/e_mod_config.c:105
+msgid "Uptime Settings"
+msgstr "Agordo de daŭro de funkciado"
+
+#: src/e_mod_config.c:107
+msgid "Update Interval:"
+msgstr "Ĝisdatigi intervalon:"
+
+#: src/e_mod_config.c:110 src/e_mod_config.c:117
+#, c-format
+msgid "%1.0f seconds"
+msgstr "%1.0f sekundoj"
+
+#: src/e_mod_config.c:114
+msgid "Check Interval:"
+msgstr "Kontroli intervalon:"
+
+#: src/e_mod_main.c:160
+msgid "Uptime"
+msgstr "Daŭro de funkciado"
+
+#: src/e_mod_main.c:210
+#, fuzzy
+msgid "Settings"
+msgstr "Agordo de daŭro de funkciado"
+
+#: src/e_mod_main.c:552
+#, c-format
+msgid "up: %d days, %d:%02d:%02ld"
+msgstr "daŭro: %d tagoj, %d:%02d:%02ld"
+
+#: src/e_mod_main.c:559
+#, c-format
+msgid "la: %.2f %.2f %.2f"
+msgstr "ŝarĝo: %.2f %.2f %.2f"
+
+#: src/e_mod_main.c:564
+#, c-format
+msgid "users: %d"
+msgstr "uzantoj : %d"
+
+#~ msgid "Uptime Configuration"
+#~ msgstr "Agordoj de daŭro de funkciado"
+
+#~ msgid "Configuration"
+#~ msgstr "Agordoj"

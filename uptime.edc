@@ -1,0 +1,45 @@
+collections
+{
+   group
+     {
+	name, "modules/uptime/main";
+	parts
+	  {
+	     part
+	       {
+		  name,		"uptime";
+		  type,           TEXT;
+		  effect,         OUTLINE_SOFT_SHADOW;
+		  mouse_events, 1;
+		  description
+		    {
+		       state: "default" 0.0;
+		       rel1
+			 {
+			    relative: 0.0 0.0;
+			    offset: 0 4;
+			 }
+		       rel2
+			 {
+			    relative: 1.0 0.33;
+			    offset: 0 -3;
+			 }
+		       color: 255 255 255 255;
+		       color2: 0 0 0 96;
+		       color3: 0 0 0 32;
+		       color_class: "module_label";
+		       text
+			 {
+			    text: "uptime";
+			    font: "Sans:style=Bold,Edje-Vera-Bold";
+			    size:  32;
+			    min:     1 1;
+			    align: 0.0 1.0;
+			    text_class: "module_large";
+			 }
+		    }
+	       }
+	  }
+     }
+}
+

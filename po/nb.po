@@ -1,0 +1,62 @@
+# Norwegian Bokmal translation for enlightenment
+# This file is distributed under the same license as the enlightenment package.
+# FIRST AUTHOR <EMAIL@ADDRESS>, 2009.
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: enlightenment\n"
+"Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
+"POT-Creation-Date: 2010-11-10 22:36-0500\n"
+"PO-Revision-Date: 2009-03-21 15:04+0000\n"
+"Last-Translator: Kenneth Langdalen <Unknown>\n"
+"Language-Team: Norwegian Bokmal <nb@li.org>\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+
+#: src/e_mod_config.c:52 src/e_mod_config.c:105
+msgid "Uptime Settings"
+msgstr "Oppetidsinnstillinger"
+
+#: src/e_mod_config.c:107
+msgid "Update Interval:"
+msgstr "Oppdateringsintervall:"
+
+#: src/e_mod_config.c:110 src/e_mod_config.c:117
+#, c-format
+msgid "%1.0f seconds"
+msgstr "%1.0f sekunder"
+
+#: src/e_mod_config.c:114
+msgid "Check Interval:"
+msgstr "Kontrollintervall:"
+
+#: src/e_mod_main.c:160
+msgid "Uptime"
+msgstr "Oppetid"
+
+#: src/e_mod_main.c:210
+#, fuzzy
+msgid "Settings"
+msgstr "Oppetidsinnstillinger"
+
+#: src/e_mod_main.c:552
+#, c-format
+msgid "up: %d days, %d:%02d:%02ld"
+msgstr "oppe: %d dager, %d:%02d:%02ld"
+
+#: src/e_mod_main.c:559
+#, c-format
+msgid "la: %.2f %.2f %.2f"
+msgstr "la: %.2f %.2f %.2f"
+
+#: src/e_mod_main.c:564
+#, c-format
+msgid "users: %d"
+msgstr "brukere: %d"
+
+#~ msgid "Uptime Configuration"
+#~ msgstr "Oppetidskonfigurasjon"
+
+#~ msgid "Configuration"
+#~ msgstr "Konfigurasjon"
