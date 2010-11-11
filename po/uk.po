@@ -5,7 +5,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uptime.HEAD\n"
 "Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-11-10 22:36-0500\n"
+"POT-Creation-Date: 2010-11-11 08:27-0500\n"
 "PO-Revision-Date: 2009-06-08 00:35+0300\n"
 "Last-Translator: Daniel Korostil <ted.korostiled@gmail.com>\n"
 "Language-Team: Ukrainian <translation@linux.org.ua>\n"
@@ -17,7 +17,8 @@ msgstr ""
 "10<=4 && (n%100<10 || n%100>=20) ? 1 : 2);\n"
 
 #: src/e_mod_config.c:52 src/e_mod_config.c:105
-msgid "Uptime Settings"
+#, fuzzy
+msgid "DeskTitle Settings"
 msgstr "Налаштування часу працездатності"
 
 #: src/e_mod_config.c:107
@@ -33,29 +34,26 @@ msgstr "%1.0f секунд"
 msgid "Check Interval:"
 msgstr "Проміжок перевірки:"
 
-#: src/e_mod_main.c:160
-msgid "Uptime"
-msgstr "Час працездатності"
+#: src/e_mod_main.c:148
+msgid "DeskTitle"
+msgstr ""
 
-#: src/e_mod_main.c:210
+#: src/e_mod_main.c:198
 #, fuzzy
 msgid "Settings"
 msgstr "Налаштування часу працездатності"
 
-#: src/e_mod_main.c:552
-#, c-format
-msgid "up: %d days, %d:%02d:%02ld"
-msgstr "не вимикався: %d днів, %d:%02d:%02ld"
+#~ msgid "Uptime"
+#~ msgstr "Час працездатності"
 
-#: src/e_mod_main.c:559
-#, c-format
-msgid "la: %.2f %.2f %.2f"
-msgstr "середнє завантаження: %.2f %.2f %.2f"
+#~ msgid "up: %d days, %d:%02d:%02ld"
+#~ msgstr "не вимикався: %d днів, %d:%02d:%02ld"
 
-#: src/e_mod_main.c:564
-#, c-format
-msgid "users: %d"
-msgstr "користувачі: %d"
+#~ msgid "la: %.2f %.2f %.2f"
+#~ msgstr "середнє завантаження: %.2f %.2f %.2f"
+
+#~ msgid "users: %d"
+#~ msgstr "користувачі: %d"
 
 #~ msgid "Uptime Configuration"
 #~ msgstr "Налаштування часу працездатності"

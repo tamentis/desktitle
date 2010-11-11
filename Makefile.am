@@ -9,19 +9,19 @@ EDJE_FLAGS = -v \
 	     -id $(top_srcdir)/images
 
 filesdir = $(datadir)
-files_DATA = uptime.edj module.desktop e-module-uptime.edj
+files_DATA = desktitle.edj module.desktop e-module-desktitle.edj
 
 EXTRA_DIST = module.desktop.in \
-	     e_modules-uptime.spec.in \
-	     e-module-uptime.edc \
-	     uptime.edc \
+	     e_modules-desktitle.spec.in \
+	     e-module-desktitle.edc \
+	     desktitle.edc \
 	     images/module_icon.png
 
 %.edj:  %.edc
 	$(EDJE_CC) $(EDJE_FLAGS) $< $@
 
 clean-local:
-	rm -rf uptime.edj e-module-uptime.edj module.desktop e_modules-uptime.spec *~
+	rm -rf desktitle.edj e-module-desktitle.edj module.desktop e_modules-desktitle.spec *~
 
 uninstall:
 	rm -rf $(DESTDIR)$(datadir)

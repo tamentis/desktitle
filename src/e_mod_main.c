@@ -74,7 +74,7 @@ Config *ut_config = NULL;
 
 static const E_Gadcon_Client_Class _gc_class =
 {
-   GADCON_CLIENT_CLASS_VERSION, "uptime",
+   GADCON_CLIENT_CLASS_VERSION, "desktitle",
  {
     _gc_init, _gc_shutdown, _gc_orient, _gc_label, _gc_icon, _gc_id_new, NULL, NULL
  },
@@ -145,7 +145,7 @@ _gc_orient (E_Gadcon_Client * gcc, E_Gadcon_Orient orient)
 static char *
 _gc_label (E_Gadcon_Client_Class *client_class)
 {
-   return D_ ("Uptime");
+   return D_ ("DeskTitle");
 }
 
 static Evas_Object *
@@ -294,7 +294,7 @@ _ut_config_updated (Config_Item *ci)
 
 EAPI E_Module_Api e_modapi =
 {
-   E_MODULE_API_VERSION, "Uptime"
+   E_MODULE_API_VERSION, "DeskTitle"
 };
 
 EAPI void *
@@ -306,7 +306,7 @@ e_modapi_init (E_Module * m)
    bindtextdomain (PACKAGE, buf);
    bind_textdomain_codeset (PACKAGE, "UTF-8");
 
-   conf_item_edd = E_CONFIG_DD_NEW ("Uptime_Config_Item", Config_Item);
+   conf_item_edd = E_CONFIG_DD_NEW ("DeskTitle_Config_Item", Config_Item);
 #undef T
 #undef D
 #define T Config_Item
@@ -315,14 +315,14 @@ e_modapi_init (E_Module * m)
    E_CONFIG_VAL (D, T, check_interval, INT);
    E_CONFIG_VAL (D, T, update_interval, INT);
 
-   conf_edd = E_CONFIG_DD_NEW ("Uptime_Config", Config);
+   conf_edd = E_CONFIG_DD_NEW ("DeskTitle_Config", Config);
 #undef T
 #undef D
 #define T Config
 #define D conf_edd
    E_CONFIG_LIST (D, T, items, conf_item_edd);
 
-   ut_config = e_config_domain_load ("module.uptime", conf_edd);
+   ut_config = e_config_domain_load ("module.desktitle", conf_edd);
    if (!ut_config)
      {
 	Config_Item *ci;
@@ -378,7 +378,7 @@ e_modapi_shutdown (E_Module * m)
 EAPI int
 e_modapi_save (E_Module * m)
 {
-   e_config_domain_save ("module.uptime", conf_edd, ut_config);
+   e_config_domain_save ("module.desktitle", conf_edd, ut_config);
    return 1;
 }
 
@@ -389,13 +389,13 @@ _ut_new (Evas * evas)
    char buf[PATH_MAX];
 
    ut = E_NEW (Uptime, 1);
-   snprintf (buf, sizeof (buf), "%s/uptime.edj",
+   snprintf (buf, sizeof (buf), "%s/desktitle.edj",
 	     e_module_dir_get (ut_config->module));
 
    ut->ut_obj = edje_object_add (evas);
    if (!e_theme_edje_object_set
-       (ut->ut_obj, "base/theme/modules/uptime", "modules/uptime/main"))
-     edje_object_file_set (ut->ut_obj, buf, "modules/uptime/main");
+       (ut->ut_obj, "base/theme/modules/desktitle", "modules/desktitle/main"))
+     edje_object_file_set (ut->ut_obj, buf, "modules/desktitle/main");
 
    evas_object_show (ut->ut_obj);
    return ut;
@@ -429,12 +429,12 @@ _ut_cb_check (void *data)
 	if ((dn->desk_x != desk->x) || (dn->desk_y != desk->y)) 
 	  continue;
 	if (dn->name) {
-	  edje_object_part_text_set (inst->ut->ut_obj, "uptime", dn->name);
+	  edje_object_part_text_set (inst->ut->ut_obj, "desktitle", dn->name);
 	  return EINA_TRUE;
 	}
      }
 
-   edje_object_part_text_set (inst->ut->ut_obj, "uptime", "");
+   edje_object_part_text_set (inst->ut->ut_obj, "desktitle", "");
 
    return EINA_TRUE;
 }

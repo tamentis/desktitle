@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: uptime 0.0.1\n"
 "Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-11-10 22:36-0500\n"
+"POT-Creation-Date: 2010-11-11 08:27-0500\n"
 "PO-Revision-Date: 2009-09-11 05:23+0000\n"
 "Last-Translator: vlood <vlood.vassilev@gmail.com>\n"
 "Language-Team: Bulgarian <dict@fsa-bg.org>\n"
@@ -18,7 +18,8 @@ msgstr ""
 "X-Generator: Launchpad (build Unknown)\n"
 
 #: src/e_mod_config.c:52 src/e_mod_config.c:105
-msgid "Uptime Settings"
+#, fuzzy
+msgid "DeskTitle Settings"
 msgstr "Настройки на модул Uptime"
 
 #: src/e_mod_config.c:107
@@ -34,29 +35,26 @@ msgstr "%1.0f·секунди"
 msgid "Check Interval:"
 msgstr "Интервал от време за проверка:"
 
-#: src/e_mod_main.c:160
-msgid "Uptime"
-msgstr "Време на активност"
+#: src/e_mod_main.c:148
+msgid "DeskTitle"
+msgstr ""
 
-#: src/e_mod_main.c:210
+#: src/e_mod_main.c:198
 #, fuzzy
 msgid "Settings"
 msgstr "Настройки на модул Uptime"
 
-#: src/e_mod_main.c:552
-#, c-format
-msgid "up: %d days, %d:%02d:%02ld"
-msgstr "включен: %d дни, %d:%02d:%02ld"
+#~ msgid "Uptime"
+#~ msgstr "Време на активност"
 
-#: src/e_mod_main.c:559
-#, c-format
-msgid "la: %.2f %.2f %.2f"
-msgstr "la: %.2f %.2f %.2f"
+#~ msgid "up: %d days, %d:%02d:%02ld"
+#~ msgstr "включен: %d дни, %d:%02d:%02ld"
 
-#: src/e_mod_main.c:564
-#, c-format
-msgid "users: %d"
-msgstr "потребители: %d"
+#~ msgid "la: %.2f %.2f %.2f"
+#~ msgstr "la: %.2f %.2f %.2f"
+
+#~ msgid "users: %d"
+#~ msgstr "потребители: %d"
 
 #~ msgid "Uptime Configuration"
 #~ msgstr "Конфигурация на модул Uptime"

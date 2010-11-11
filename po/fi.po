@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Uptime module (e17)\n"
 "Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-11-10 22:36-0500\n"
+"POT-Creation-Date: 2010-11-11 08:27-0500\n"
 "PO-Revision-Date: 2008-01-23 01:50+0200\n"
 "Last-Translator: Jani väyrynen <janivayrynen@gmail.com>\n"
 "Language-Team: Finnish <janivayrynen@gmail.com>\n"
@@ -15,7 +15,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/e_mod_config.c:52 src/e_mod_config.c:105
-msgid "Uptime Settings"
+#, fuzzy
+msgid "DeskTitle Settings"
 msgstr "Käyttöajan asetukset"
 
 #: src/e_mod_config.c:107
@@ -31,29 +32,26 @@ msgstr "%1.0f sekuntia"
 msgid "Check Interval:"
 msgstr "Tarkistusväli"
 
-#: src/e_mod_main.c:160
-msgid "Uptime"
-msgstr "Käyttöaika"
+#: src/e_mod_main.c:148
+msgid "DeskTitle"
+msgstr ""
 
-#: src/e_mod_main.c:210
+#: src/e_mod_main.c:198
 #, fuzzy
 msgid "Settings"
 msgstr "Käyttöajan asetukset"
 
-#: src/e_mod_main.c:552
-#, c-format
-msgid "up: %d days, %d:%02d:%02ld"
-msgstr "päällä: %d päivä(ä), %d:%02d:%02ld"
+#~ msgid "Uptime"
+#~ msgstr "Käyttöaika"
 
-#: src/e_mod_main.c:559
-#, c-format
-msgid "la: %.2f %.2f %.2f"
-msgstr "kuorman ka.: %.2f %.2f %.2f"
+#~ msgid "up: %d days, %d:%02d:%02ld"
+#~ msgstr "päällä: %d päivä(ä), %d:%02d:%02ld"
 
-#: src/e_mod_main.c:564
-#, c-format
-msgid "users: %d"
-msgstr "käyttäjät: %d"
+#~ msgid "la: %.2f %.2f %.2f"
+#~ msgstr "kuorman ka.: %.2f %.2f %.2f"
+
+#~ msgid "users: %d"
+#~ msgstr "käyttäjät: %d"
 
 #~ msgid "Uptime Configuration"
 #~ msgstr "Käyttöajan asetukset"

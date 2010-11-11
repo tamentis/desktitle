@@ -7,7 +7,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: Uptime\n"
 "Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-11-10 22:36-0500\n"
+"POT-Creation-Date: 2010-11-11 08:27-0500\n"
 "PO-Revision-Date: 2008-03-20 16:26+0900\n"
 "Last-Translator: Yasufumi Haga <yasufumi.haga@nifty.com>\n"
 "Language-Team: none\n"
@@ -16,7 +16,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/e_mod_config.c:52 src/e_mod_config.c:105
-msgid "Uptime Settings"
+#, fuzzy
+msgid "DeskTitle Settings"
 msgstr "設定内容"
 
 #: src/e_mod_config.c:107
@@ -32,29 +33,20 @@ msgstr "%1.0f 秒"
 msgid "Check Interval:"
 msgstr "監視間隔"
 
-#: src/e_mod_main.c:160
-msgid "Uptime"
+#: src/e_mod_main.c:148
+msgid "DeskTitle"
 msgstr ""
 
-#: src/e_mod_main.c:210
+#: src/e_mod_main.c:198
 #, fuzzy
 msgid "Settings"
 msgstr "設定内容"
 
-#: src/e_mod_main.c:552
-#, c-format
-msgid "up: %d days, %d:%02d:%02ld"
-msgstr "up: %d日 %d:%02d:%02ld"
+#~ msgid "up: %d days, %d:%02d:%02ld"
+#~ msgstr "up: %d日 %d:%02d:%02ld"
 
-#: src/e_mod_main.c:559
-#, c-format
-msgid "la: %.2f %.2f %.2f"
-msgstr ""
-
-#: src/e_mod_main.c:564
-#, c-format
-msgid "users: %d"
-msgstr "ユーザー: %d"
+#~ msgid "users: %d"
+#~ msgstr "ユーザー: %d"
 
 #~ msgid "Uptime Configuration"
 #~ msgstr "uptime の設定"

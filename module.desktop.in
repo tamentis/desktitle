@@ -1,14 +1,7 @@
 [Desktop Entry]
 Type=Link
-Name=Uptime
-Name[eo]=Daŭro de funkciado
-Name[hu]=Üzemóra
-Icon=e-module-uptime
+Name=DeskTitle
+Icon=e-module-desktitle
 X-Enlightenment-ModuleType=utils
-Comment=Gadget to display the current uptime of the system.
-Comment[cs]=Zobrazuje aktu�ln�� uptime syst�mu.
-Comment[eo]=Vidigi la nunan daŭron de funkciado de la operaciumo.
-Comment[hu]=Egy modul, amely megmutatja mióta van folyamatosan üzemben a rendszer.
-Comment[it]=Modulo per visualizzare il tempo di servizio del sistema.
-Comment[fr]=Affiche la durée de fonctionnement du système depuis le démarrage de celui-ci.
-Comment[pt]=Uma aplicação que exibe o tempo de funcionamento do sistema
+Comment=Gadget to display the current desktop's name.
+Comment[fr]=Affiche le nom du bureau en court.

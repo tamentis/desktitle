@@ -6,7 +6,7 @@ msgid ""
 msgstr ""
 "Project-Id-Version: enlightenment\n"
 "Report-Msgid-Bugs-To: enlightenment-devel@lists.sourceforge.net\n"
-"POT-Creation-Date: 2010-11-10 22:36-0500\n"
+"POT-Creation-Date: 2010-11-11 08:27-0500\n"
 "PO-Revision-Date: 2008-11-26 13:01+0000\n"
 "Last-Translator: Andrzej MoST (Marcin Ostajewski) <Unknown>\n"
 "Language-Team: Polish <pl@li.org>\n"
@@ -15,7 +15,8 @@ msgstr ""
 "Content-Transfer-Encoding: 8bit\n"
 
 #: src/e_mod_config.c:52 src/e_mod_config.c:105
-msgid "Uptime Settings"
+#, fuzzy
+msgid "DeskTitle Settings"
 msgstr "Ustawienia Uptime"
 
 #: src/e_mod_config.c:107
@@ -31,29 +32,26 @@ msgstr "%1.0f sekund"
 msgid "Check Interval:"
 msgstr "Częstotliwość sprawdzania:"
 
-#: src/e_mod_main.c:160
-msgid "Uptime"
-msgstr "Czas działania"
+#: src/e_mod_main.c:148
+msgid "DeskTitle"
+msgstr ""
 
-#: src/e_mod_main.c:210
+#: src/e_mod_main.c:198
 #, fuzzy
 msgid "Settings"
 msgstr "Ustawienia Uptime"
 
-#: src/e_mod_main.c:552
-#, c-format
-msgid "up: %d days, %d:%02d:%02ld"
-msgstr "czas pracy: %d dni, %d:%02d:%02ld"
+#~ msgid "Uptime"
+#~ msgstr "Czas działania"
 
-#: src/e_mod_main.c:559
-#, c-format
-msgid "la: %.2f %.2f %.2f"
-msgstr "la: %.2f %.2f %.2f"
+#~ msgid "up: %d days, %d:%02d:%02ld"
+#~ msgstr "czas pracy: %d dni, %d:%02d:%02ld"
 
-#: src/e_mod_main.c:564
-#, c-format
-msgid "users: %d"
-msgstr "użytkownicy: %d"
+#~ msgid "la: %.2f %.2f %.2f"
+#~ msgstr "la: %.2f %.2f %.2f"
+
+#~ msgid "users: %d"
+#~ msgstr "użytkownicy: %d"
 
 #~ msgid "Uptime Configuration"
 #~ msgstr "Konfiguracja Uptime"
