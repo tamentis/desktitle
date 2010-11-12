@@ -1,45 +1,17 @@
 #include <e.h>
 #include "e_mod_main.h"
 
-#include <stdlib.h>
-#include <stdint.h>
-#include <sys/types.h>
-#include <utmp.h>
-
-#if TIME_WITH_SYS_TIME
-# include <sys/time.h>
-# include <time.h>
-#else
-# if HAVE_SYS_TIME_H
-#  include <sys/time.h>
-# else
-#  include <time.h>
-# endif
-#endif
-#include <syslog.h>
-
-#ifdef __linux__
-# include <linux/kernel.h>
-# include <linux/unistd.h>
-# include <sys/sysinfo.h>
-#endif
-
-#ifdef __FreeBSD__
-# include <paths.h>
-# include <sys/tty.h>
-# include <sys/sysctl.h>
-# include <sys/param.h>
-#endif
-
 typedef struct _Instance Instance;
 typedef struct _Uptime Uptime;
+typedef struct _E_Obj_Dialog E_Rename;
+
 
 struct _Instance
 {
    E_Gadcon_Client *gcc;
    Evas_Object *ut_obj;
    Uptime *ut;
-   Ecore_Timer *monitor;
+   Ecore_Event_Handler *handler;
    time_t uptime;
    double la[3];
    Config_Item *ci;
@@ -81,6 +53,13 @@ static const E_Gadcon_Client_Class _gc_class =
    E_GADCON_CLIENT_STYLE_PLAIN
 };
 
+static Eina_Bool
+_e_zone_cb_desk_after_show(void *data, int type, void *event)
+{
+   _ut_cb_check(data);
+   return ECORE_CALLBACK_PASS_ON;
+}
+
 static E_Gadcon_Client *
 _gc_init (E_Gadcon * gc, const char *name, const char *id, const char *style)
 {
@@ -102,12 +81,14 @@ _gc_init (E_Gadcon * gc, const char *name, const char *id, const char *style)
    inst->gcc = gcc;
    inst->ut_obj = o;
 
-   evas_object_event_callback_add (o, EVAS_CALLBACK_MOUSE_DOWN,
+   inst->handler = ecore_event_handler_add(E_EVENT_DESK_AFTER_SHOW,
+			_e_zone_cb_desk_after_show, inst);
+
+   evas_object_event_callback_add(o, EVAS_CALLBACK_MOUSE_DOWN,
 				   _ut_cb_mouse_down, inst);
    ut_config->instances = eina_list_append (ut_config->instances, inst);
 
-   if (!inst->monitor)
-     inst->monitor = ecore_timer_add (0.1, _ut_cb_check, inst);
+   _ut_cb_check(inst);
 
    return gcc;
 }
@@ -124,11 +105,10 @@ _gc_shutdown (E_Gadcon_Client * gcc)
    inst = gcc->data;
    if (!(ut = inst->ut)) return;
 
-   if (inst->monitor) ecore_timer_del (inst->monitor);
-
    ut_config->instances = eina_list_remove (ut_config->instances, inst);
    evas_object_event_callback_del (ut->ut_obj, EVAS_CALLBACK_MOUSE_DOWN,
 				   _ut_cb_mouse_down);
+   ecore_event_handler_del(inst->handler);
 
    _ut_free (ut);
    free (inst);
@@ -182,7 +162,11 @@ _ut_cb_mouse_down (void *data, Evas * e, Evas_Object * obj, void *event_info)
    inst = data;
    ev = event_info;
 
-   if (ev->button == 3)
+   if (ev->button == 1 && ev->flags & EVAS_BUTTON_DOUBLE_CLICK)
+     {
+	edje_object_part_text_set (inst->ut->ut_obj, "desktitle", "editing...");
+     }
+   else if (ev->button == 3)
      {
 	E_Menu *ma, *mg;
 	E_Menu_Item *mi;
@@ -285,10 +269,6 @@ _ut_config_updated (Config_Item *ci)
 
 	inst = l->data;
 	if (inst->ci != ci) continue;
-	if (inst->monitor)
-	  ecore_timer_del (inst->monitor);
-	inst->monitor =
-	  ecore_timer_add (ci->update_interval, _ut_cb_check, inst);
     }
 }
 
@@ -438,3 +418,5 @@ _ut_cb_check (void *data)
 
    return EINA_TRUE;
 }
+
+

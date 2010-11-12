@@ -7,10 +7,10 @@ collections
 	  {
 	     part
 	       {
-		  name,		"desktitle";
-		  type,           TEXT;
-		  effect,         OUTLINE_SOFT_SHADOW;
-		  mouse_events, 1;
+		  name:		"desktitle";
+		  type:		TEXT;
+		  effect:	OUTLINE_SOFT_SHADOW;
+		  mouse_events:	1;
 		  description
 		    {
 		       state: "default" 0.0;
@@ -32,9 +32,9 @@ collections
 			 {
 			    text: "desktitle";
 			    font: "Sans:style=Bold,Edje-Vera-Bold";
-			    size:  32;
-			    min:     1 1;
-			    align: 0.0 1.0;
+			    size:  28;
+			    min:   1 1;
+			    align: 0.0 0.0;
 			    text_class: "module_large";
 			 }
 		    }
