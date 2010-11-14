@@ -13,7 +13,7 @@ collections
 		  mouse_events:	1;
 		  description
 		    {
-		       state: "default" 0.0;
+		       state:	"default" 0.0;
 		       rel1
 			 {
 			    relative: 0.0 0.0;
@@ -24,18 +24,18 @@ collections
 			    relative: 1.0 1.0;
 			    offset: 0 0;
 			 }
-		       color: 255 255 255 255;
-		       color2: 0 0 0 96;
-		       color3: 0 0 0 32;
+		       color:	255 255 255 255;
+		       color2:	0 0 0 96;
+		       color3:	0 0 0 32;
 		       color_class: "module_label";
 		       text
 			 {
-			    text: "desktitle";
-			    font: "Sans:style=Bold,Edje-Vera-Bold";
-			    size:  28;
-			    min:   1 1;
-			    align: 0.0 0.0;
-			    text_class: "module_large";
+			    text:	"desktitle";
+			    font:	"Sans:style=Bold,Edje-Vera-Bold";
+			    size:	18;
+			    min:	1 1;
+			    align:	0.0 0.0;
+			    text_class:	"module_large";
 			 }
 		    }
 	       }
