@@ -27,12 +27,12 @@ collections
 		       color:	255 255 255 255;
 		       color2:	0 0 0 96;
 		       color3:	0 0 0 32;
-		       color_class: "module_label";
+		       color_class: "border_title_active";
 		       text
 			 {
 			    text:	"desktitle";
 			    font:	"Sans:style=Bold,Edje-Vera-Bold";
-			    size:	18;
+			    size:	16;
 			    min:	1 1;
 		            fit: 	1 1;
 			    align:	0.0 0.0;

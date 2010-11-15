@@ -7,13 +7,11 @@ typedef struct _E_Obj_Dialog E_Rename;
 
 struct _Instance
 {
-   E_Gadcon_Client *gcc;
-   Evas_Object *ut_obj;
-   Uptime *ut;
-   Ecore_Event_Handler *handler;
-   time_t uptime;
-   double la[3];
-   Config_Item *ci;
+   E_Gadcon_Client   *gcc;
+   Evas_Object       *ut_obj;
+   Uptime            *ut;
+   Eina_List         *handlers;
+   Config_Item       *ci;
 };
 
 struct _Uptime
@@ -31,7 +29,6 @@ static Evas_Object *_gc_icon(E_Gadcon_Client_Class * client_class, Evas * evas);
 static const char *_gc_id_new(E_Gadcon_Client_Class * client_class);
 static void _ut_cb_mouse_down(void *data, Evas * e, Evas_Object * obj,
                               void *event_info);
-static void _ut_menu_cb_configure(void *data, E_Menu * m, E_Menu_Item * mi);
 static void _ut_menu_cb_post(void *data, E_Menu * m);
 static Config_Item *_ut_config_item_get(const char *id);
 static Uptime *_ut_new(Evas * evas);
@@ -78,10 +75,10 @@ _gc_init(E_Gadcon * gc, const char *name, const char *id, const char *style)
    inst->gcc = gcc;
    inst->ut_obj = o;
 
-   inst->handler = ecore_event_handler_add(E_EVENT_DESK_AFTER_SHOW,
-                                           _e_zone_cb_desk_after_show, inst);
-   inst->handler = ecore_event_handler_add(E_EVENT_DESK_NAME_CHANGE,
-                                           _e_zone_cb_desk_after_show, inst);
+   inst->handlers = eina_list_append(inst->handlers, ecore_event_handler_add(
+         E_EVENT_DESK_AFTER_SHOW, _e_zone_cb_desk_after_show, inst));
+   inst->handlers = eina_list_append(inst->handlers, ecore_event_handler_add(
+         E_EVENT_DESK_NAME_CHANGE, _e_zone_cb_desk_after_show, inst));
 
    evas_object_event_callback_add(o, EVAS_CALLBACK_MOUSE_DOWN,
                                   _ut_cb_mouse_down, inst);
@@ -110,7 +107,12 @@ _gc_shutdown(E_Gadcon_Client * gcc)
    ut_config->instances = eina_list_remove(ut_config->instances, inst);
    evas_object_event_callback_del(ut->ut_obj, EVAS_CALLBACK_MOUSE_DOWN,
                                   _ut_cb_mouse_down);
-   ecore_event_handler_del(inst->handler);
+
+   while (inst->handlers)
+     {
+       ecore_event_handler_del(inst->handlers->data);
+       inst->handlers = eina_list_remove_list(inst->handlers, inst->handlers);
+     }
 
    _ut_free(ut);
    free(inst);
@@ -163,13 +165,11 @@ _cb_entry_ok(char *text, void *data)
    E_Container *con;
 
    inst = data;
-
    zone = inst->gcc->gadcon->zone;
-   con = zone->container;
    desk = e_desk_current_get(zone);
 
-   e_desk_name_del(con->num, zone->num, desk->x, desk->y);
-   e_desk_name_add(con->num, zone->num, desk->x, desk->y, text);
+   e_desk_name_del(zone->container->num, zone->num, desk->x, desk->y);
+   e_desk_name_add(zone->container->num, zone->num, desk->x, desk->y, text);
    e_desk_name_update();
    e_config_save_queue();
 }
@@ -209,11 +209,6 @@ _ut_cb_mouse_down(void *data, Evas * e, Evas_Object * obj, void *event_info)
 
         mg = e_menu_new();
 
-        mi = e_menu_item_new(mg);
-        e_menu_item_label_set(mi, D_("Settings"));
-        e_util_menu_item_theme_icon_set(mi, "preferences-system");
-        e_menu_item_callback_set(mi, _ut_menu_cb_configure, inst);
-
         e_gadcon_client_util_menu_items_append(inst->gcc, ma, mg, 0);
         e_gadcon_canvas_zone_geometry_get(inst->gcc->gadcon, &x, &y, &w, &h);
         e_menu_activate_mouse(ma,
@@ -233,15 +228,6 @@ _ut_menu_cb_post(void *data, E_Menu * m)
 
    e_object_del(E_OBJECT(ut_config->menu));
    ut_config->menu = NULL;
-}
-
-static void
-_ut_menu_cb_configure(void *data, E_Menu * m, E_Menu_Item * mi)
-{
-   Instance *inst;
-
-   inst = data;
-   _config_ut_module(inst->ci);
 }
 
 static Config_Item *
