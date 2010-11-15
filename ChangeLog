@@ -1,0 +1,47 @@
+2010-11-14  Bertrand Janin  <tamentis@neopulsar.org>
+
+	* desktitle.edc, src/e_mod_main.c:
+	Added handlers list to have a proper cleanup.
+	[1469e0f658c2] [tip]
+
+	* desktitle.edc:
+	Have the text fit to content, fixes #2.
+	[a38eadde3367]
+
+	* desktitle.edc, src/e_mod_main.c:
+	Allow to edit the desktop title on the fly, and save!
+	[5a88d6cf502e]
+
+2010-11-12  Bertrand Janin  <tamentis@neopulsar.org>
+
+	* desktitle.edc, src/e_mod_main.c:
+	Use the desk change callback instead of the timer (fixes #1).
+	[c4a5cb6056f3]
+
+2010-11-11  Bertrand Janin  <tamentis@neopulsar.org>
+
+	* Makefile.am, configure.ac, desktitle.edc, e-module-desktitle.edc, e
+	-module-uptime.edc, e_modules-desktitle.spec.in, e_modules-
+	uptime.spec.in, module.desktop.in, po/bg.po, po/cs.po, po/de.po,
+	po/el.po, po/eo.po, po/es.po, po/fi.po, po/fr.po, po/he.po,
+	po/hr.po, po/hu.po, po/it.po, po/ja.po, po/lt.po, po/nb.po,
+	po/nl.po, po/pl.po, po/pt.po, po/ru.po, po/sk.po, po/sv.po,
+	po/tr.po, po/uk.po, po/zh_CN.po, src/e_mod_config.c,
+	src/e_mod_main.c, uptime.edc:
+	Fixed a few titles here and there.
+	[cd58da3e071c]
+
+	* ABOUT-NLS, AUTHORS, COPYING, COPYING-PLAIN, ChangeLog, INSTALL,
+	Makefile.am, NEWS, README, autogen.sh, configure.ac, e-module-
+	uptime.edc, e_modules-uptime.spec.in, images/module_icon.png,
+	module.desktop.in, po/LINGUAS, po/Makevars, po/POTFILES.in,
+	po/ar.po, po/bg.po, po/cs.po, po/de.po, po/el.po, po/eo.po,
+	po/es.po, po/fi.po, po/fr.po, po/he.po, po/hr.po, po/hu.po,
+	po/it.po, po/ja.po, po/lt.po, po/nb.po, po/nl.po, po/pl.po,
+	po/pt.po, po/ru.po, po/sk.po, po/sv.po, po/tr.po, po/uk.po,
+	po/zh_CN.po, src/Makefile.am, src/e_mod_config.c, src/e_mod_main.c,
+	src/e_mod_main.h, uptime.edc:
+	Initial commit, most of the files are still from the ``uptime``
+	module.
+	[0e3abf307bc5]
+

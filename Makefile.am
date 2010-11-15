@@ -26,3 +26,5 @@ clean-local:
 uninstall:
 	rm -rf $(DESTDIR)$(datadir)
 
+changelog:
+	hg log --style=changelog > ChangeLog
